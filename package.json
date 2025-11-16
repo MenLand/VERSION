@@ -1,6 +1,6 @@
 {
 	"name": "semantic-release-github-actions-simple-example",
-	"version": "2.1.0",
+	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
@@ -17,5 +17,21 @@
 	},
 	"engines": {
 		"node": ">=20.8.1"
+	},
+	"release": {
+		"branches": [
+			"master"
+		],
+		"plugins": [
+			"@semantic-release/commit-analyzer",
+			"@semantic-release/release-notes-generator",
+			[
+				"@semantic-release/npm",
+				{
+					"npmPublish": false
+				}
+			],
+			"@semantic-release/github"
+		]
 	}
 }
